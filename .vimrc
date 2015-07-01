@@ -1,7 +1,6 @@
 
 " Standard settings
 set nocompatible
-set smartindent
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -19,6 +18,7 @@ set so=7
 set lazyredraw
 set noerrorbells
 set novisualbell
+syntax on
 nnoremap : ;
 nnoremap ; :
 map 0 ^
