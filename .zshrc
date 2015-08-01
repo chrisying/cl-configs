@@ -2,6 +2,10 @@
 PS1=$'%{\e[1;32m%}[%n:%{\e[0m\e[0;36m%}%~%{\e[0m\e[1;32m%}]%{\e[0m\e[0;31m%}$%{\e[0m%} '
 RPS1=$'%{\e[4;35m%}%*%{\e[0m%}'
 
+# ls colors
+CLICOLORS=1
+LSCOLORS='gxfxcxdxbxegedabagacad'
+
 # Variables
 EDITOR='vi'
 REPORTTIME=10
@@ -10,6 +14,7 @@ REPORTTIME=10
 autoload -U compinit
 compinit
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' list-colors ${(s.:.)LSCOLORS}
 setopt completeinword
 autoload select-word-style
 select-word-style shell
