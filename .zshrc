@@ -10,6 +10,9 @@ LSCOLORS='gxfxcxdxbxegedabagacad'
 EDITOR='vi'
 REPORTTIME=10
 
+# Vim
+alias vi='vim'
+
 # Tab completion
 autoload -U compinit
 compinit
@@ -31,6 +34,11 @@ zle -N history-beginning-search-forward-end history-search-end
 bindkey '\e[A' history-beginning-search-backward-end
 bindkey '\e[B' history-beginning-search-forward-end
 
+# Directory stack
+setopt pushdsilent
+setopt autopushd
+setopt pushdminus
+
 # Better globbing
 setopt extendedglob
 unsetopt caseglob
@@ -45,3 +53,8 @@ alias la='ls -a'
 alias grep='grep --color'
 alias lc='find . | xargs wc -l'
 alias clear='printf "\e]50;ClearScrollback\a"'
+alias py='python'
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
+alias -g ......='../../../../..'
