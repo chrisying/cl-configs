@@ -8,10 +8,12 @@ LSCOLORS='gxfxcxdxbxegedabagacad'
 
 # Variables
 EDITOR='vi'
+GIT_EDITOR='vi'
 REPORTTIME=10
 
 # Vim
 alias vi='vim'
+alias v='vim'
 
 # Tab completion
 autoload -U compinit
@@ -54,7 +56,13 @@ alias grep='grep --color'
 alias lc='find . | xargs wc -l'
 alias clear='printf "\e]50;ClearScrollback\a"'
 alias py='python'
+alias gpp='g++'
 alias -g ...='../..'
 alias -g ....='../../..'
 alias -g .....='../../../..'
 alias -g ......='../../../../..'
+
+function chpwd() {
+    emulate -L zsh
+    ls
+}

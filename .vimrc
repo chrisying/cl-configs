@@ -40,13 +40,14 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugins
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'fatih/vim-go'
+Plugin 'vim-scripts/a.vim'
 
 call vundle#end()
 filetype plugin indent on
 
 " Highlight lines too long
-highlight OverLength ctermbg=red ctermfg=white
-match OverLength /\%81v.\+/
+" highlight OverLength ctermbg=red ctermfg=white
+" match OverLength /\%81v.\+/
 
 " Restore cursor position (10 files, 100 lines, 20 cmdline history)
 autocmd BufReadPost *
@@ -56,3 +57,11 @@ autocmd BufReadPost *
 
 " Bracket completion
 inoremap {<CR> {<CR>}<Esc>ko
+
+" Delete trailing whitespace
+autocmd FileType c,cpp,python,java autocmd BufWritePre <buffer> :%s/\s\+$//e
+
+" Compile different filetypes
+autocmd FileType c command C w | !gcc %:t
+autocmd FileType cpp command C w | !gpp %:t
+autocmd FileType tex command C w | !pdflatex %:t
