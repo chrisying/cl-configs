@@ -9,6 +9,7 @@ _PREFIX = 'https://raw.githubusercontent.com/chrisying/cl-configs/master/'
 _FILES = [
         '.zshrc',
         '.vimrc',
+        '.dir_colors',
 ]
 
 def main():
@@ -22,12 +23,12 @@ def main():
         if os.path.isfile(path):
             print '%s already exists in your home directory, renaming it %s.bak' % (f, f)
             os.rename(path, path + '.bak')
-            
+
 
         # Download new files from github
         resp = urllib2.urlopen(_PREFIX + f)
         raw = resp.read()
-        
+
         with open(path, 'w') as fd:
             fd.write(raw)
 
