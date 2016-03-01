@@ -4,7 +4,7 @@ RPS1=$'%{\e[4;35m%}%*%{\e[0m%}'
 
 # ls colors
 CLICOLORS=1
-LSCOLORS='gxfxcxdxbxegedabagacad'
+eval `gdircolors ~/.dir_colors`
 
 # Variables
 EDITOR='vi'
@@ -12,14 +12,15 @@ GIT_EDITOR='vi'
 REPORTTIME=10
 
 # Vim
+alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias vi='vim'
 alias v='vim'
 
 # Tab completion
-autoload -U compinit
-compinit
+autoload -Uz compinit && compinit -i
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-zstyle ':completion:*' list-colors ${(s.:.)LSCOLORS}
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' menu select=2
 setopt completeinword
 autoload select-word-style
 select-word-style shell
@@ -49,7 +50,7 @@ unsetopt caseglob
 setopt interactivecomments
 
 # Helpful aliases
-alias ls='ls -FGh'
+alias ls='gls --color -FGh'
 alias ll='ls -l'
 alias la='ls -a'
 alias grep='grep --color'
@@ -66,3 +67,7 @@ function chpwd() {
     emulate -L zsh
     ls
 }
+
+# Go
+export GOPATH=$HOME/space/go
+export GOROOT=/usr/local/go
