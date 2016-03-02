@@ -58,8 +58,15 @@ autocmd BufReadPost *
 " Bracket completion
 inoremap {<CR> {<CR>}<Esc>ko
 
-" Delete trailing whitespace
-autocmd FileType c,cpp,python,java autocmd BufWritePre <buffer> :%s/\s\+$//e
+" Delete trailing whitespace and keep cursor position
+fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+
+autocmd FileType c,cpp,java,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
 " Compile different filetypes
 autocmd FileType c command C w | !gcc %:t
