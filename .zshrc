@@ -4,7 +4,7 @@ RPS1=$'%{\e[4;35m%}%*%{\e[0m%}'
 
 # ls colors
 CLICOLORS=1
-eval `gdircolors ~/.dir_colors`
+eval `gdircolors ~/.dir_colors` # OSX-specific
 
 # Variables
 EDITOR='vi'
@@ -12,7 +12,6 @@ GIT_EDITOR='vi'
 REPORTTIME=10
 
 # Vim
-alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias vi='vim'
 alias v='vim'
 
@@ -67,7 +66,3 @@ function chpwd() {
     emulate -L zsh
     ls
 }
-
-# Go
-export GOPATH=$HOME/space/go
-export GOROOT=/usr/local/go
