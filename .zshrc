@@ -1,10 +1,11 @@
 # Prompts
-PS1=$'%{\e[1;32m%}[%n:%{\e[0m\e[0;36m%}%~%{\e[0m\e[1;32m%}]%{\e[0m\e[0;31m%}$%{\e[0m%} '
+PS1=$'%{\e[1;32m%}[%n%{\e[1;34m%}@%{\e[1;32m%}%m:%{\e[0m\e[0;36m%}%~%{\e[0m\e[1;32m%}]%{\e[0m\e[0;31m%}$%{\e[0m%} '
 RPS1=$'%{\e[4;35m%}%*%{\e[0m%}'
 
 # ls colors
 CLICOLORS=1
-eval `gdircolors ~/.dir_colors` # OSX-specific
+#eval `gdircolors ~/.dir_colors` # OSX-specific
+eval `dircolors ~/.dir_colors` # Linux
 
 # Variables
 EDITOR='vi'
@@ -33,8 +34,10 @@ bindkey -v
 bindkey '^R' history-incremental-pattern-search-backward
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
-bindkey '\e[A' history-beginning-search-backward-end
-bindkey '\e[B' history-beginning-search-forward-end
+#bindkey '\e[A' history-beginning-search-backward-end
+#bindkey '\e[B' history-beginning-search-forward-end
+bindkey '^[OA' history-beginning-search-backward-end
+bindkey '^[OB' history-beginning-search-forward-end
 
 # Directory stack
 setopt pushdsilent
@@ -49,12 +52,12 @@ unsetopt caseglob
 setopt interactivecomments
 
 # Helpful aliases
-alias ls='gls --color -FGh'
+alias ls='ls --color -FGh'
 alias ll='ls -l'
 alias la='ls -a'
 alias grep='grep --color'
 alias lc='find . | xargs wc -l'
-alias clear='printf "\e]50;ClearScrollback\a"'
+#alias clear='printf "\e]50;ClearScrollback\a"'	# OSX
 alias py='python'
 alias gpp='g++'
 alias -g ...='../..'
@@ -62,7 +65,11 @@ alias -g ....='../../..'
 alias -g .....='../../../..'
 alias -g ......='../../../../..'
 
+# ls after every cd
 function chpwd() {
     emulate -L zsh
     ls
 }
+
+# Command not found
+source /etc/zsh_command_not_found

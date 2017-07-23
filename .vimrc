@@ -39,7 +39,6 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Plugins
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'fatih/vim-go'
 Plugin 'vim-scripts/a.vim'
 
 call vundle#end()
@@ -70,5 +69,5 @@ autocmd FileType c,cpp,java,python autocmd BufWritePre <buffer> :call <SID>Strip
 
 " Compile different filetypes
 autocmd FileType c command C w | !gcc %:t
-autocmd FileType cpp command C w | !gpp %:t
+autocmd FileType cpp command C w | !g++ %:t
 autocmd FileType tex command C w | !pdflatex %:t
