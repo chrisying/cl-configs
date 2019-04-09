@@ -24,6 +24,8 @@ nnoremap ; :
 map 0 ^
 set background=dark
 colorscheme delek
+set cursorcolumn
+set cursorline
 
 " Vundle
 " :PluginList       - lists configured plugins
@@ -40,9 +42,14 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugins
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-scripts/a.vim'
+Plugin 'Vimjas/vim-python-pep8-indent'
 
 call vundle#end()
 filetype plugin indent on
+
+" YCM close preview
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
 
 " Highlight lines too long
 " highlight OverLength ctermbg=red ctermfg=white

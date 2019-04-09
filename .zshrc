@@ -1,10 +1,16 @@
+# Custom ZSH config by chrisying@
+
+# Git branch information (https://github.com/olivierverdier/zsh-git-prompt)
+GIT_PROMPT_EXECUTABLE='haskell'
+source ~/.zsh/zsh-git-prompt/zshrc.sh
+
 # Prompts
 PS1=$'%{\e[1;32m%}[%n%{\e[1;34m%}@%{\e[1;32m%}%m:%{\e[0m\e[0;36m%}%~%{\e[0m\e[1;32m%}]%{\e[0m\e[0;31m%}$%{\e[0m%} '
-RPS1=$'%{\e[4;35m%}%*%{\e[0m%}'
+RPS1=$'$(git_super_status) %{\e[4;35m%}%*%{\e[0m%}'
 
 # ls colors
 CLICOLORS=1
-#eval `gdircolors ~/.dir_colors` # OSX-specific
+#eval `gdircolors ~/.dir_colors` # macOS
 eval `dircolors ~/.dir_colors` # Linux
 
 # Variables
@@ -47,6 +53,7 @@ setopt pushdminus
 # Better globbing
 setopt extendedglob
 unsetopt caseglob
+setopt NO_NOMATCH
 
 # Type '# comment' to add comment to end of command
 setopt interactivecomments
@@ -57,19 +64,27 @@ alias ll='ls -l'
 alias la='ls -a'
 alias grep='grep --color'
 alias lc='find . | xargs wc -l'
-#alias clear='printf "\e]50;ClearScrollback\a"'	# OSX
+#alias clear='printf "\e]50;ClearScrollback\a"'	# macOS
 alias py='python'
 alias gpp='g++'
 alias -g ...='../..'
 alias -g ....='../../..'
 alias -g .....='../../../..'
 alias -g ......='../../../../..'
+alias tma='tmux a'
+alias opn='xdg-open'    # Ubuntu
+alias pbcopy='xclip -selection clipboard'   # Linux
 
-# ls after every cd
+# ls after every cd (timeout 1s)
 function chpwd() {
     emulate -L zsh
-    ls
+    timeout 1 ls --color -FGh
 }
 
 # Command not found
 source /etc/zsh_command_not_found
+
+# Set caps-lock -> escape
+setxkbmap -option caps:escape   # Ubuntu
+
+# Custom paths
