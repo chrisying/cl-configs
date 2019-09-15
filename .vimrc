@@ -40,7 +40,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Plugins
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'ycm-core/YouCompleteMe'
 Plugin 'vim-scripts/a.vim'
 Plugin 'Vimjas/vim-python-pep8-indent'
 
