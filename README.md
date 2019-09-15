@@ -43,12 +43,6 @@ chsh -s $(which zsh)
 
 5. Restart the terminal window
 
-6. Install Vundle
-
-```
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-```
-
 7. Get the dotfiles
 
 ```
@@ -57,5 +51,17 @@ curl -o $HOME/.zshrc https://raw.githubusercontent.com/chrisying/cl-configs/mast
 curl -o $HOME/.tmux.conf https://raw.githubusercontent.com/chrisying/cl-configs/master/.tmux.conf
 curl -o $HOME/.dircolors https://raw.github.com/trapd00r/LS_COLORS/master/LS_COLORS
 ```
+
+8. Install vim plugins
+
+```
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 ```
+
+9. Fix any additional issues that show up:
+    * Install [YouCompleteMe](https://github.com/ycm-core/YouCompleteMe)
+    * Install [zsh-git-prompt](https://github.com/olivierverdier/zsh-git-prompt)
+    * Set L-Option to +Esc in iTerm2
+    * Set CapsLock to Esc in Preferences
+    * Add [GitHub SSH key](https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) and set git config: `git config --global --edit`
