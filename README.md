@@ -5,7 +5,28 @@ changed the things that I need.
 
 ## Install on Linux-like systems
 
-TODO(chris): write this the next time I setup a Linux machine
+Tested on Ubuntu 20.04 (dual booted Windows 10)
+
+0. Install basic stuff
+
+```
+sudo apt install curl tmux vim zsh
+```
+
+1. Download dotfiles
+
+```
+curl -o $HOME/.vimrc https://raw.githubusercontent.com/chrisying/cl-configs/master/.vimrc 
+curl -o $HOME/.zshrc https://raw.githubusercontent.com/chrisying/cl-configs/master/.zshrc
+curl -o $HOME/.tmux.conf https://raw.githubusercontent.com/chrisying/cl-configs/master/.tmux.conf
+curl -o $HOME/.dircolors https://raw.github.com/trapd00r/LS_COLORS/master/LS_COLORS
+```
+
+2. Update shell to zsh (then log out and log in)
+
+```
+chsh -s $(which zsh)
+```
 
 ## Install on Mac
 
