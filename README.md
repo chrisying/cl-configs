@@ -10,7 +10,7 @@ Tested on Ubuntu 20.04 (dual booted Windows 10)
 0. Install basic stuff
 
 ```
-sudo apt install curl tmux vim zsh
+sudo apt install curl git tmux vim xclip zsh
 ```
 
 1. Download dotfiles
@@ -27,6 +27,19 @@ curl -o $HOME/.dircolors https://raw.github.com/trapd00r/LS_COLORS/master/LS_COL
 ```
 chsh -s $(which zsh)
 ```
+
+3. Install vim plugins
+
+```
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
+```
+
+4. Fix zsh/vim issues
+   * Install [zsh-git-prompt](https://github.com/olivierverdier/zsh-git-prompt)
+   * Install [YouCompleteMe](https://github.com/ycm-core/YouCompleteMe)
+
+5. Add [GitHub SSH key](https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) and set git config: `git config --global --edit`
 
 ## Install on Mac
 
