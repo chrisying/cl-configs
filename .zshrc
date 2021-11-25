@@ -10,8 +10,8 @@ RPS1=$'$(git_super_status) %{\e[4;35m%}%*%{\e[0m%}'
 
 # ls colors
 CLICOLORS=1
-#eval `gdircolors ~/.dir_colors` # macOS
-eval `dircolors ~/.dir_colors` # Linux
+#eval `gdircolors ~/.dircolors` # macOS
+eval `dircolors ~/.dircolors` # Linux
 
 # Variables
 EDITOR='vi'
