@@ -1,7 +1,8 @@
 # Custom ZSH config by chrisying@
 
-# Git branch information (https://github.com/olivierverdier/zsh-git-prompt)
+# Git branch information (https://github.com/zsh-git-prompt/zsh-git-prompt)
 GIT_PROMPT_EXECUTABLE='haskell'
+ZSH_GIT_PROMPT_SHOW_UPSTREAM=2
 source ~/.zsh/zsh-git-prompt/zshrc.sh
 
 # Prompts
