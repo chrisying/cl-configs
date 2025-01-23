@@ -75,6 +75,7 @@ alias -g ......='../../../../..'
 alias tma='tmux a'
 alias opn='xdg-open'    # Ubuntu
 alias pbcopy='xclip -selection clipboard'   # Linux
+alias gpoh='git push origin HEAD'
 
 # ls after every cd (timeout 1s)
 function chpwd() {
