@@ -14,13 +14,14 @@ CLICOLORS=1
 eval `dircolors ~/.dircolors` # Linux
 
 # Variables
-EDITOR='vi'
-GIT_EDITOR='vi'
+EDITOR='vim'
+GIT_EDITOR='vim'
 REPORTTIME=10
 
 # Vim
 alias vi='vim'
 alias v='vim'
+TERM=xterm-256color  # Fix Vim background color issue
 
 # Tab completion
 autoload -Uz compinit && compinit -i

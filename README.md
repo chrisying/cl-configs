@@ -36,10 +36,15 @@ vim +PluginInstall +qall
 ```
 
 4. Fix zsh/vim issues
-   * Install [zsh-git-prompt](https://github.com/olivierverdier/zsh-git-prompt)
+   * Install [zsh-git-prompt](https://github.com/zsh-git-prompt/zsh-git-prompt)
    * Install [YouCompleteMe](https://github.com/ycm-core/YouCompleteMe)
+   * Install [delek.vim](https://www.vim.org/scripts/script.php?script_id=786) into `.vim/colors`
+   * Update Terminal color scheme to solarized-dark
 
-5. Add [GitHub SSH key](https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) and set git config: `git config --global --edit`
+5. Set up GitHub
+   * Add [GitHub SSH key](https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+   * Set git editor: `git config --global core.editor "vim"`
+   * Set git config: `git config --global --edit`
 
 ## Install on Mac
 

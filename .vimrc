@@ -1,4 +1,3 @@
-
 " Standard settings
 set nocompatible
 set tabstop=4
@@ -14,18 +13,27 @@ set ignorecase
 set smartcase
 set incsearch
 set mouse=a
-set so=7
+set scrolloff=7
 set lazyredraw
 set noerrorbells
 set novisualbell
+set autoindent
+set backspace=indent,eol,start
+set hidden
+set cursorcolumn
+set cursorline
+set wildmenu
+set wildmode=list:longest
+
 syntax on
 nnoremap : ;
 nnoremap ; :
 map 0 ^
+
+set t_Co=256
 set background=dark
 colorscheme delek
-set cursorcolumn
-set cursorline
+highlight CursorColumn ctermfg=none ctermbg=black cterm=none
 
 " Vundle
 " :PluginList       - lists configured plugins
