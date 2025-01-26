@@ -19,7 +19,8 @@ sudo apt install curl git tmux vim xclip zsh
 curl -o $HOME/.vimrc https://raw.githubusercontent.com/chrisying/cl-configs/master/.vimrc 
 curl -o $HOME/.zshrc https://raw.githubusercontent.com/chrisying/cl-configs/master/.zshrc
 curl -o $HOME/.tmux.conf https://raw.githubusercontent.com/chrisying/cl-configs/master/.tmux.conf
-curl -o $HOME/.dircolors https://raw.github.com/trapd00r/LS_COLORS/master/LS_COLORS
+curl -o $HOME/.ycm_extra_conf.py https://raw.githubusercontent.com/chrisying/cl-configs/master/.ycm_extra_conf.py
+curl -o $HOME/.dircolors https://raw.githubusercontent.com/trapd00r/LS_COLORS/refs/heads/master/LS_COLORS
 ```
 
 2. Update shell to zsh (then log out and log in)
